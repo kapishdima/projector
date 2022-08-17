@@ -1,0 +1,3 @@
+CREATE USER projector;
+CREATE DATABASE projector;
+GRANT ALL PRIVILEGES ON DATABASE projector TO projector;
