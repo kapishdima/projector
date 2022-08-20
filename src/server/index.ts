@@ -1,4 +1,4 @@
-import { createServer } from './http/index';
+import { createServer } from '@http/';
 
 const main = () => {
   createServer();
