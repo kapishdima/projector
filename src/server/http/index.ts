@@ -6,7 +6,11 @@ import { createRouter } from './router';
 
 dotenv.config();
 
-export const createServer = () => {
+export type Server = {
+  port?: number;
+};
+
+export const createServer = (options?: Server) => {
   const app = express();
 
   app.use(bodyParser.json());
@@ -14,7 +18,7 @@ export const createServer = () => {
 
   createRouter(app);
 
-  app.listen(process.env.PORT, () => {
+  app.listen(options?.port || process.env.PORT, () => {
     console.log('Server starting...');
   });
 

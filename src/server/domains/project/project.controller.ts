@@ -65,7 +65,7 @@ class ProjectController implements IProjectController {
 
       const project = await this.service.updateProject(id, payload);
 
-      return res.status(204).json(project);
+      return res.status(201).json(project);
     } catch (error) {
       if (error instanceof ProjectNotFound) {
         return res.status(404).json({ message: ProjectNotFoundMessage });
