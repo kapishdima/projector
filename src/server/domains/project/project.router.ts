@@ -7,10 +7,10 @@ const router = Router();
 
 const controller = projectModule.get<IProjectController>(PROJECT_CONTROLLER);
 
-router.get('/', controller.getProjects);
-router.get('/:id', controller.getProject);
-router.post('/', controller.createProject);
-router.put('/:id', controller.updateProject);
-router.delete('/:id', controller.deleteProject);
+router.get('/projects', controller.getProjects);
+router.get('/project/:id', controller.getProject);
+router.post('/projects', controller.createProject);
+router.put('/projects/:id', controller.updateProject);
+router.delete('/projects/:id', controller.deleteProject);
 
 export default router;

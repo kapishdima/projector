@@ -1,6 +1,7 @@
 import { Application } from 'express';
-import { projects } from '@domains/';
+import { projects, tasks } from '@domains/';
 
 export const createRouter = (app: Application) => {
-  app.use('/projects', projects.router);
+  app.use(projects.router);
+  app.use(tasks.router);
 };

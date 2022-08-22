@@ -28,7 +28,7 @@ class ProjectRepository implements IProjectRepository {
     return projects;
   }
   async getProject(id: string) {
-    const project = await prisma.project.findFirst({ where: { id } });
+    const project = await prisma.project.findFirst({ where: { id }, include: { tasks: true } });
 
     return project;
   }
