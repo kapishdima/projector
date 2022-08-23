@@ -1,0 +1,9 @@
+{
+  "name": "projector",
+  "version": "0.0.1",
+  "description": "Projector - project system that motivates to bring the idea to the end.",
+  "main": "index.js",
+  "author": "KapishDima",
+  "license": "MIT",
+  "repository": "git@github.com:kapishdima/projector.git"
+}

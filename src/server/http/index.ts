@@ -18,7 +18,7 @@ export const createServer = (options?: Server) => {
 
   createRouter(app);
 
-  app.listen(options?.port || process.env.PORT, () => {
+  app.listen(options?.port || process.env.SERVER_PORT, () => {
     console.log('Server starting...');
   });
 
