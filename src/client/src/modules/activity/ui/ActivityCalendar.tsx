@@ -12,11 +12,13 @@ import {
   isSameDay,
   setDefaultOptions,
 } from 'date-fns';
-import { Col, Row, Button, Text, Spacer } from '@nextui-org/react';
+import { Col, Row, Button, Text, Spacer, Popover } from '@nextui-org/react';
 
 import { AngleLeftIcon } from '../../../shared/icons/AngleLeftIcon';
 import { AngleRightIcon } from '../../../shared/icons/AngleRightIcon';
 import { startOfWeek } from 'date-fns/esm';
+import { MarkActivityPopover } from './MarkActivityPopover';
+import { ActivityCalendarDay } from './ActivityCalendarDay';
 
 type Direction = -1 | 1;
 
@@ -113,15 +115,11 @@ export const ActivityCalendar: React.FC = () => {
       <Spacer y={1} />
       <Row wrap="wrap" align="flex-start" css={{ gap: '4px' }}>
         {daysInMonth.map((day) => (
-          <Button
-            auto
-            flat={!includesInInterval(day, activityDays)}
-            disabled={!isSameMonth(day, currentMonth)}
-            color={includesInInterval(day, activityDays) ? 'success' : 'primary'}
-            size="xs"
-            css={{ minWidth: '35px', maxWidth: '35px', minHeight: '35px', maxHeight: '35px' }}>
-            {day.getDate()}
-          </Button>
+          <ActivityCalendarDay
+            isActivity={includesInInterval(day, activityDays)}
+            isSameMonth={isSameMonth(day, currentMonth)}
+            day={day}
+          />
         ))}
       </Row>
     </Col>
