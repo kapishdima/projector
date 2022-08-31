@@ -20,8 +20,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const daysLeft = differenceInDays(new Date(), expirationDate);
 
   return (
-    <Grid xs={3.5}>
-      <Card isHoverable isPressable variant="bordered" css={{ p: '$1' }} color="primary">
+    <Grid xs={3.8}>
+      <Card isHoverable isPressable variant="shadow" css={{ p: '$1' }} color="primary">
         <Card.Header css={{ flexDirection: 'column', alignItems: 'flex-start' }}>
           <ProjectStatusBadge completed={completed} />
           <Spacer y={0.6} />
