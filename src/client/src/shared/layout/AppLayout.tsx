@@ -1,17 +1,15 @@
-import React from 'react';
-import { Grid, Container } from '@nextui-org/react';
-import { AppHeader } from './AppHeader';
-import { AppContent } from './AppContent';
+import React, { PropsWithChildren } from 'react';
+import { Grid, Spacer } from '@nextui-org/react';
+import { AppNavigation } from './AppNavigation';
 
-export const AppLoyout = () => {
+export const AppLoyout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <Grid.Container gap={2}>
-      <Grid md={1}>
-        <AppHeader />
-      </Grid>
-      <Grid md={11}>
-        <AppContent />
-      </Grid>
+    <Grid.Container>
+      <AppNavigation />
+      <Spacer y={2} />
+      <Grid.Container css={{ paddingLeft: '24px', paddingRight: '24px' }}>
+        {children}
+      </Grid.Container>
     </Grid.Container>
   );
 };

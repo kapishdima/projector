@@ -18,7 +18,7 @@ export const router: Route[] = [
     icon: AppsIcon,
   },
   {
-    path: '/tasks',
+    path: '/:id/tasks',
     label: 'Tasks',
     icon: TasksIcon,
   },
