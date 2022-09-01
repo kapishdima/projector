@@ -9,6 +9,7 @@ import { StatsIcon } from '../../../shared/icons/StatsIcon';
 import { TrashIcon } from '../../../shared/icons/TrashIcon';
 import { ProjectDomainEntity } from '../entities/project.domain';
 import { ProjectStatusBadge } from './ProjectStatusBadge';
+import { useNavigate } from 'react-router-dom';
 
 type ProjectCardProps = {
   project: ProjectDomainEntity;
@@ -16,12 +17,24 @@ type ProjectCardProps = {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { name, description, completed, expirationDate } = project;
+  const navigate = useNavigate();
+
   const formatedExpirationDate = format(expirationDate, 'dd.MM.yyyy');
   const daysLeft = differenceInDays(new Date(), expirationDate);
 
+  const onProjectCardClick = () => {
+    navigate('/1');
+  };
+
   return (
     <Grid xs={3.8}>
-      <Card isHoverable isPressable variant="shadow" css={{ p: '$1' }} color="primary">
+      <Card
+        isHoverable
+        isPressable
+        variant="shadow"
+        css={{ p: '$1' }}
+        color="primary"
+        onClick={onProjectCardClick}>
         <Card.Header css={{ flexDirection: 'column', alignItems: 'flex-start' }}>
           <ProjectStatusBadge completed={completed} />
           <Spacer y={0.6} />

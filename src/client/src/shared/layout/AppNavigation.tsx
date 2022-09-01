@@ -11,7 +11,7 @@ export const AppNavigation = () => {
   const [activePath, setActivePath] = useState<string>(router[0].path);
 
   return (
-    <Navbar isBordered css={{ justifyContent: 'space-between' }}>
+    <Navbar>
       <Navbar.Brand>
         <Text b color="inherit" hideIn="xs">
           PROJECTOR
@@ -34,7 +34,8 @@ export const AppNavigation = () => {
       <Navbar.Content>
         <Navbar.Item
           css={{
-            minWidth: '400px',
+            minWidth: '300px',
+            mr: '$14',
           }}>
           <Input
             fullWidth

@@ -7,6 +7,7 @@ import { ProjectDomainEntity } from '../../modules/project/entities/project.doma
 import { AngleLeftIcon } from '../../shared/icons/AngleLeftIcon';
 import { AngleRightIcon } from '../../shared/icons/AngleRightIcon';
 import { ActivityCalendar } from '../../modules/activity/ui/ActivityCalendar';
+import { ProjectActivityCard } from '../../modules/project/ui/ProjectActivityCard';
 
 const projects: ProjectDomainEntity[] = [
   {
@@ -75,29 +76,7 @@ export const ProjectsIndex: React.FC = () => {
           <ProjectCard project={project} />
         ))}
       </Grid>
-      <Grid xs={3} css={{ position: 'sticky', top: '10px', maxH: '60%' }}>
-        <Card variant="shadow" css={{ p: '$10' }}>
-          <Card.Header>
-            <Grid>
-              <Row align="center" justify="space-between">
-                <Text b size={14}>
-                  Work activity
-                </Text>
-                <Button flat auto size="xs">
-                  Full statistics
-                </Button>
-              </Row>
-              <Spacer y={0.5} />
-              <Text size={12} color="$gray400" css={{ lh: '$md', fontWeight: 'bold' }}>
-                This calendar shows the days in which the work on the projects was going on
-              </Text>
-            </Grid>
-          </Card.Header>
-          <Card.Body>
-            <ActivityCalendar />
-          </Card.Body>
-        </Card>
-      </Grid>
+      <ProjectActivityCard />
     </AppLoyout>
   );
 };

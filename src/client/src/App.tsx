@@ -1,13 +1,8 @@
 import React from 'react';
-import { ProjectsIndex } from './pages/Projects/ProjectsIndex';
-import { AppLoyout } from './shared/layout/AppLayout';
+import { Router } from './modules/router/ui/Router';
 
 function App() {
-  return (
-    <div className="app">
-      <ProjectsIndex />
-    </div>
-  );
+  return <Router />;
 }
 
 export default App;
